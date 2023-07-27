@@ -1,4 +1,4 @@
-ci:
+test:
   adapter: postgresql
   encoding: unicode
   database: web_test
