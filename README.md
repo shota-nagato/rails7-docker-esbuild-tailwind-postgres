@@ -1,6 +1,6 @@
 ## Usage
 ```
-$ git clone git@github.com:shota-nagato/rails7-docker-esbuild-tailwind-postgres.git
+$ git clone git@github.com:shota-nagato/dot-web-clone.git
 $ docker-compose build
 $ docker-compose run --rm web bundle exec rails db:create
 $ docker-compose run --rm web bundle exec rails db:migrate
