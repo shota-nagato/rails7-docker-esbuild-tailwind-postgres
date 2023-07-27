@@ -1,6 +1,9 @@
-test:
+ci:
+  <<: *default
   adapter: postgresql
-  encoding: utf8
-  username: root
-  password:
+  encoding: unicode
   database: web_test
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: db
