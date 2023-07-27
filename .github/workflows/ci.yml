@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     services:
-      mysql:
+      postgres:
         image: postgres:15
         ports:
           - 5432:5432
