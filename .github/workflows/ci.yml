@@ -15,8 +15,12 @@ jobs:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         env:
+          POSTGRES_DB: app_test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/app_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -44,9 +48,8 @@ jobs:
 
       - name: Database create and migrate
         run: |
-          bundle exec rails db:create RAILS_ENV=test
-          bundle exec rails db:migrate RAILS_ENV=test
-
+          db:schema:load
+          
       - name: Run rspec
         run: bundle exec rspec
 
