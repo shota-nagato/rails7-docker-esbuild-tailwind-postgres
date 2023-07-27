@@ -47,8 +47,7 @@ jobs:
         run: yarn install --check-files
 
       - name: Database create and migrate
-        run: |
-          db:schema:load
+        run: bin/rails db:schema:load
           
       - name: Run rspec
         run: bundle exec rspec
