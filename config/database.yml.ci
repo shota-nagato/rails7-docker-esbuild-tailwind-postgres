@@ -1,8 +1,6 @@
 test:
   adapter: postgresql
   encoding: unicode
-  database: web_test
   pool: 5
   username: root
   password:
-  host: db

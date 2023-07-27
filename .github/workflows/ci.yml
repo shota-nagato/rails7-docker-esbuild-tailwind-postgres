@@ -17,7 +17,6 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_BD: app_test
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -44,8 +43,6 @@ jobs:
         run: yarn install --check-files
 
       - name: Database create and migrate
-        env:
-          DATABASE_URL: postgres://postgres:password@localhost:5432/test
         run: |
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
