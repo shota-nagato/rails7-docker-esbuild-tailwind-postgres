@@ -30,3 +30,9 @@ group :development do
   gem 'rubocop-rspec' # 追加
   gem 'web-console'
 end
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+end
